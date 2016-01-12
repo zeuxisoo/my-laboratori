@@ -35,6 +35,10 @@ module.exports = {
                 test: /\.css$/,
                 loader: cssLoader
             },
+            {
+                test: /\.jpg$/,
+                loader: "url-loader?mimetype=image/jpeg"
+            }
         ]
     },
 
