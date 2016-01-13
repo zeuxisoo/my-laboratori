@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "node webpack.config.develop.js"
+    "dev": "node webpack.config.develop.js",
+    "build": "NODE_ENV=production webpack --config webpack.config.production.js -p --progress --profile --colors"
   },
   "devDependencies": {
     "babel-core": "^6.4.0",
