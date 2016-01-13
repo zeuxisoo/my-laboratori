@@ -9,7 +9,14 @@ baseConfig.devtool = 'eval';
 
 var app = new WebpackDevServer(webpack(baseConfig), {
     publicPath: baseConfig.output.publicPath,
+    historyApiFallback: true,
+    debug: true,
     hot: true,
+    inline: true,
+    progress: true,
+    stats: {
+        colors: true
+    },
 });
 
 app.listen(9090, '0.0.0.0', function (err, result) {
