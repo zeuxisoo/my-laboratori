@@ -28,7 +28,7 @@
 
 .card-media.mdl-card__media {
     text-align: center;
-    background: rgb(0,188,212);
+    background: #CCF1F6;
 }
 
 .card-supporting-text.mdl-card__supporting-text {
