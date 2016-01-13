@@ -16,6 +16,11 @@ Router.map({
         name     : 'home',
         component: require('./views/home.vue')
     },
+
+    '/p/:id': {
+        name     : 'project',
+        component: require('./views/project.vue')
+    }
 });
 
 Router.start(Vue.extend(require('./app.vue')), '#app');
