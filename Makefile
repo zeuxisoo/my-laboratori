@@ -10,3 +10,17 @@ dev:
 build:
 	@rm -rf ./build
 	@npm run build
+
+deploy: build
+	@rm -rf ./deploy
+
+	@mkdir ./deploy
+	@cp -Rf build ./deploy
+	@cp -Rf data ./deploy
+	@cp index.html ./deploy
+
+	@npm run deploy
+
+clean:
+	@rm -rf ./build
+	@rm -rf ./deploy

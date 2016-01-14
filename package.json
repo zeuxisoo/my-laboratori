@@ -1,7 +1,8 @@
 {
   "scripts": {
     "dev": "node webpack.config.develop.js",
-    "build": "NODE_ENV=production webpack --config webpack.config.production.js -p --progress --profile --colors"
+    "build": "NODE_ENV=production webpack --config webpack.config.production.js -p --progress --profile --colors",
+    "deploy": "node deploy.sftp.js"
   },
   "devDependencies": {
     "babel-core": "^6.4.0",
@@ -15,6 +16,7 @@
     "file-loader": "^0.8.5",
     "postcss-discard-comments": "^2.0.3",
     "postcss-loader": "^0.8.0",
+    "sftp-upload": "0.0.6",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "vue-hot-reload-api": "^1.2.2",
