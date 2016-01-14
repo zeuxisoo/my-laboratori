@@ -18,6 +18,7 @@ deploy: build
 	@cp -Rf build ./deploy
 	@cp -Rf data ./deploy
 	@cp index.html ./deploy
+	@cp robots.txt ./deploy
 
 	@npm run deploy
 
