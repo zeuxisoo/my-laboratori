@@ -4,7 +4,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var publicPath = "/build/";
 
-var cssLoader = ExtractTextPlugin.extract("style-loader", "css-loader?sourceMap!postcss-loader");
+var cssLoader = ExtractTextPlugin.extract("style-loader", "css-loader?sourceMap");
 
 module.exports = {
     entry: ["./src/app.js"],
