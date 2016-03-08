@@ -7,7 +7,7 @@
                 <div class="mdl-navigation mdl-layout--large-screen-only">
                     <a class="mdl-navigation__link" v-link="{ name: 'home' }">Home</a>
                     <a class="mdl-navigation__link" href="http://www.not.im/">Blog</a>
-                    <a class="mdl-navigation__link" href="http://profile.not.im/">Profile</a>
+                    <a class="mdl-navigation__link" href="http://project.not.im/">Project</a>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="mdl-navigation">
                 <a class="mdl-navigation__link" v-link="{ name: 'home' }">Home</a>
                 <a class="mdl-navigation__link" href="http://www.not.im/">Blog</a>
-                <a class="mdl-navigation__link" href="http://profile.not.im/">Profile</a>
+                <a class="mdl-navigation__link" href="http://project.not.im/">Project</a>
             </div>
         </div>
         <div class="mdl-layout__content">
