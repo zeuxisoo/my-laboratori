@@ -25,10 +25,12 @@ deploy: build resize
 	@cp index.html ./deploy
 	@cp robots.txt ./deploy
 
+	@sed -i ".bak" "s/{version}/`date +%s`/g" "deploy/index.html"
+	@rm -rf "deploy/index.html.bak"
+
 	@npm run deploy
 
 clean:
 	@rm -rf ./build
 	@rm -rf ./deploy
 	@rm -rf ./venv
-

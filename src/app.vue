@@ -2,21 +2,21 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <div class="mdl-layout__header">
             <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title">Labs</span>
+                <span class="mdl-layout-title">Lab</span>
                 <div class="mdl-layout-spacer"></div>
                 <div class="mdl-navigation mdl-layout--large-screen-only">
                     <a class="mdl-navigation__link" v-link="{ name: 'home' }">Home</a>
-                    <a class="mdl-navigation__link" href="http://www.not.im/">Blog</a>
-                    <a class="mdl-navigation__link" href="http://project.not.im/">Project</a>
+                    <a class="mdl-navigation__link" href="https://www.not.im/">Blog</a>
+                    <a class="mdl-navigation__link" href="https://project.not.im/">Project</a>
                 </div>
             </div>
         </div>
         <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Labs</span>
+            <span class="mdl-layout-title">Lab</span>
             <div class="mdl-navigation">
                 <a class="mdl-navigation__link" v-link="{ name: 'home' }">Home</a>
-                <a class="mdl-navigation__link" href="http://www.not.im/">Blog</a>
-                <a class="mdl-navigation__link" href="http://project.not.im/">Project</a>
+                <a class="mdl-navigation__link" href="https://www.not.im/">Blog</a>
+                <a class="mdl-navigation__link" href="https://project.not.im/">Project</a>
             </div>
         </div>
         <div class="mdl-layout__content">
