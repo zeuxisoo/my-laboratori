@@ -1,53 +1,32 @@
 <template>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <div class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title">Lab</span>
-                <div class="mdl-layout-spacer"></div>
-                <div class="mdl-navigation mdl-layout--large-screen-only">
-                    <a class="mdl-navigation__link" v-link="{ name: 'home' }">Home</a>
-                    <a class="mdl-navigation__link" href="https://www.not.im/">Blog</a>
-                    <a class="mdl-navigation__link" href="https://project.not.im/">Project</a>
-                </div>
-            </div>
+    <div id="app">
+        <div id="nav">
+            <router-link to="/">Home</router-link> |
+            <router-link to="/about">About</router-link>
         </div>
-        <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Lab</span>
-            <div class="mdl-navigation">
-                <a class="mdl-navigation__link" v-link="{ name: 'home' }">Home</a>
-                <a class="mdl-navigation__link" href="https://www.not.im/">Blog</a>
-                <a class="mdl-navigation__link" href="https://project.not.im/">Project</a>
-            </div>
-        </div>
-        <div class="mdl-layout__content">
-            <div class="page-content">
-                <router-view></router-view>
-            </div>
-        </div>
+        <router-view/>
     </div>
 </template>
 
 <style>
-.card-full-width.mdl-card {
-    width: 100%;
-}
-
-.card-media.mdl-card__media {
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    background: #CCF1F6;
+    color: #2c3e50;
 }
 
-.image-responsive img {
-    max-width: 100% !important;
-    height: auto;
-    display: inline-block;
+#nav {
+    padding: 30px;
+}
+
+#nav a {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+    color: #42b983;
 }
 </style>
-
-<script>
-require('material-design-lite/dist/material.min.css')
-require('material-design-lite/dist/material.min.js')
-
-export default {
-}
-</script>
