@@ -30,7 +30,7 @@
                     <a class="card-footer-item" target="_blank"
                         v-if="hasDemoLink === true"
                         v-bind:href="this.project.link">
-                        Open Demo
+                        Open Project
                     </a>
                 </footer>
             </div>
