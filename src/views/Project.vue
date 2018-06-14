@@ -51,8 +51,7 @@ export default {
 
     data() {
         return {
-            loading: false,
-            project: null
+            loading: false
         }
     },
 
@@ -65,43 +64,35 @@ export default {
     },
 
     computed: {
+        project() {
+            return this.$store.state.project;
+        },
+
         hasDemoLink() {
-            return this.project.link != ""
+            return this.project.link != "";
         }
     },
 
     methods: {
         async fetchProject() {
-            this.loading = true;
-
             try {
-                let project_id = this.$route.params.id;
-                let response   = await this.$http.get('/data/projects.json');
-                let projects   = response.data.reverse();
+                this.loading = true;
 
-                let matched_project = null;
+                let project = await this.$store.dispatch('fetchProject', {
+                    id: this.$route.params.id
+                });
 
-                for(let i in projects) {
-                    let project = projects[i];
-
-                    if (project.id == project_id) {
-                        matched_project = project;
-                        break;
-                    }
-                }
-
-                if (matched_project == null) {
+                if (project === null) {
                     alert('Cannot find the related project!');
 
                     this.$router.replace({
                         name: 'home'
                     });
-                }else{
-                    this.project = matched_project;
-                    this.loading = false;
                 }
             }catch(error) {
                 console.log(error);
+            }finally{
+                this.loading = false;
             }
         },
 

@@ -13,6 +13,10 @@ export default new Vuex.Store({
     mutations: {
         setProjects: (state, projects) => {
             state.projects = projects;
+        },
+
+        setProject: (state, project) => {
+            state.project = project;
         }
     },
     actions: {
@@ -20,9 +24,29 @@ export default new Vuex.Store({
             return api
                     .getAllProjects()
                     .then(response => {
-                        let projects = response.data.reverse();
+                        const projects = response.data.reverse();
 
                         commit('setProjects', projects);
+
+                        return projects;
+                    })
+        },
+
+        fetchProject: ({ commit }, { id }) => {
+            return api
+                    .getAllProjects()
+                    .then(response => response.data.reverse())
+                    .then(projects => projects.filter(p => p.id == id))
+                    .then(projects => {
+                        if (projects.length != 1) {
+                            return null;
+                        }else{
+                            const project = projects[0];
+
+                            commit('setProject', project);
+
+                            return project;
+                        }
                     })
         }
     }
