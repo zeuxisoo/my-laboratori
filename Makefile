@@ -5,10 +5,9 @@ all:
 	@echo "make build"
 
 dev:
-	@npm run dev
+	@npm run serve
 
 build:
-	@rm -rf ./build
 	@npm run build
 
 resize:
