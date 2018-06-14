@@ -32,10 +32,7 @@
     </div>
 </template>
 
-<style lang="scss">
-@import '~animate.css';
-@import '~bulma';
-
+<style>
 body {
     padding-top: 60px;
 }
@@ -50,6 +47,9 @@ body {
 </style>
 
 <script>
+import 'bulma/css/bulma.css';
+import 'animate.css';
+
 export default {
 
     data() {
