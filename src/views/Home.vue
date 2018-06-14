@@ -5,8 +5,8 @@
         </div>
 
         <div v-if="projects.length > 0">
-            <div class="columns is-multiline is-mobile">
-                <div class="column is-half-mobile is-half-desktop" v-for="project in projects" v-bind:key="project.id">
+            <div class="columns is-multiline">
+                <div class="column is-half" v-for="project in projects" v-bind:key="project.id">
                     <div class="card">
                         <div class="card-header">
                             <p class="card-header-title">
@@ -24,7 +24,10 @@
                             </div>
                         </div>
                         <footer class="card-footer">
-                            <a href="#" class="card-footer-item">Save</a>
+                            <router-link class="card-footer-item"
+                                 v-bind:to="{ name: 'project', params: { id : project.id } }">
+                                More
+                            </router-link>
                         </footer>
                     </div>
                 </div>
