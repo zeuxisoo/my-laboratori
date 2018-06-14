@@ -90,8 +90,16 @@ export default {
                     }
                 }
 
-                this.project = matched_project;
-                this.loading = false;
+                if (matched_project == null) {
+                    alert('Cannot find the related project!');
+
+                    this.$router.replace({
+                        name: 'home'
+                    });
+                }else{
+                    this.project = matched_project;
+                    this.loading = false;
+                }
             }catch(error) {
                 console.log(error);
             }
