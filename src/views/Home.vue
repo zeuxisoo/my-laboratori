@@ -42,8 +42,7 @@ export default {
 
     data() {
         return {
-            loading: false,
-            projects: []
+            loading: false
         }
     },
 
@@ -58,18 +57,22 @@ export default {
         '$route': 'fetchProjects'
     },
 
+    computed: {
+        projects() {
+            return this.$store.state.projects;
+        }
+    },
+
     methods: {
-        async fetchProjects() {
-            this.loading = true;
-
+        fetchProjects() {
             try {
-                let response = await this.$http.get('/data/projects.json');
-                let projects = response.data.reverse();
+                this.loading = true;
 
-                this.projects = projects;
-                this.loading = false;
+                this.$store.dispatch('fetchProjects');
             }catch(error) {
                 console.log(error);
+            }finally{
+                this.loading = false;
             }
         }
     }
