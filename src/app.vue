@@ -24,13 +24,18 @@
         </nav>
         <div class="section is-small">
             <div class="container is-fluid">
-                <router-view></router-view>
+                <transition mode="out-in" enter-active-class="fadeIn" leave-active-class="fadeOut">
+                    <router-view class="animated"></router-view>
+                </transition>
             </div>
         </div>
     </div>
 </template>
 
-<style>
+<style lang="scss">
+@import '~animate.css';
+@import '~bulma';
+
 body {
     padding-top: 60px;
 }
@@ -45,8 +50,6 @@ body {
 </style>
 
 <script>
-import './../node_modules/bulma/css/bulma.css';
-
 export default {
 
     data() {
