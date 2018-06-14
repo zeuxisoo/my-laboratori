@@ -21,5 +21,5 @@ yarn-error.log*
 *.sw*
 
 #custom
-data/projects.json
-data/images
+public/data/projects.json
+public/data/images

@@ -1,7 +1,7 @@
 [{
     "id": 1,
-    "thumb": "/data/image/01/thumb.png",
-    "image": "/data/image/02/image.png",
+    "thumb": "/data/images/01/thumb.png",
+    "image": "/data/images/02/image.png",
     "caption": "Project name",
     "description": "Project description",
     "poweredBy": "Project stack",
