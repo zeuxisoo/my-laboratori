@@ -1,0 +1,30 @@
+const { deploy } = require('sftp-sync-deploy');
+
+let config = {
+    host: 'example.com',
+    port: 22,
+    username: 'user',
+    privateKey: '/path/to/ssh/private.key',
+    localDir: 'dist',
+    remoteDir: '/path/to/remote/directory'
+
+    // password: 'password',            // Optional
+    // passphrase: 'passphrase',        // Optional
+    // agent: '/path/to/agent.sock',    // Optional, path to the ssh-agent socket.
+};
+
+let options = {
+    dryRun: false,
+    exclude: [
+        'node_modules',
+        'src/**/*.spec.ts'
+    ],
+    excludeMode: 'ignore',  // Behavior for excluded files ('remove' or 'ignore'), Default to 'remove'.
+    forceUpload: false      // Force uploading all files, Default to false(upload only newer files).
+};
+
+deploy(config, options).then(() => {
+    console.log('success!');
+}).catch(err => {
+    console.error('error! ', err);
+})

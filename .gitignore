@@ -24,3 +24,4 @@ yarn-error.log*
 public/data/projects.json
 public/data/images
 venv
+deploy.sftp.js
