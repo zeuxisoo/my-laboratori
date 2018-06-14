@@ -1,10 +1,54 @@
 <template>
     <div id="app">
-        <router-view/>
+        <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <router-link :to="{ name: 'home' }" class="navbar-item">Lab</router-link>
+
+                <a role="button"
+                    class="navbar-burger burger"
+                    v-on:click="show_navbar = !show_navbar"
+                    v-bind:class="{ 'is-active': show_navbar }">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div class="navbar-menu" v-bind:class="{ 'is-active': show_navbar }">
+                <div class="navbar-end">
+                    <router-link :to="{ name: 'home' }" class="navbar-item">Home</router-link>
+                    <a href="https://www.not.im/" class="navbar-item">Blog</a>
+                    <a href="https://project.not.im/" class="navbar-item">Project</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container is-fluid">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
 <style>
+body {
+    padding-top: 60px;
+}
+
 #app {
+    font-family: 'Titillium Web', sans-serif;
 }
 </style>
+
+<script>
+import './../node_modules/bulma/css/bulma.css';
+
+export default {
+
+    data() {
+        return {
+            show_navbar: false,
+            transition_name: 'fade-enter'
+        }
+    }
+
+}
+</script>
