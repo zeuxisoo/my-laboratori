@@ -3,7 +3,7 @@ from PIL import Image
 
 dirname = os.path.dirname
 abspath = os.path.abspath
-data_image_root = os.path.join(abspath(dirname(dirname(__file__))), 'data/image')
+data_image_root = os.path.join(abspath(dirname(dirname(__file__))), 'public/data/images')
 
 def resize(file_path, width_size, height_size):
     image = Image.open(file_path)
