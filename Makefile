@@ -30,6 +30,7 @@ deploy: build resize
 	@npm run deploy
 
 clean:
+	@rm -rf ./dist
 	@rm -rf ./build
 	@rm -rf ./deploy
 	@rm -rf ./venv
