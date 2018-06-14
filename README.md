@@ -1,6 +1,6 @@
 ## My-Laboratori
 
-A static site generator to generate my my side projects website
+A static website to record my side projects
 
 ## Usage
 
