@@ -12,9 +12,11 @@
                     </p>
                 </div>
                 <div class="card-image">
-                    <figure class="image is-4by3">
-                        <img v-bind:src="project.image" v-bind:alt="project.caption">
-                    </figure>
+                    <div class="columns is-centered">
+                        <div class="colum">
+                            <img v-bind:src="project.image" v-bind:alt="project.caption">
+                        </div>
+                    </div>
                 </div>
                 <div class="card-content">
                     <div class="content">
