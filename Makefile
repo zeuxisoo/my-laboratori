@@ -1,8 +1,15 @@
 .PHONY: build
 
 all:
-	@echo "make dev"
-	@echo "make build"
+	@echo
+	@echo "Command      : Description"
+	@echo "------------ : -----------"
+	@echo "make dev     : Start the development server"
+	@echo "make build   : Build the website into dist directory"
+	@echo "make deploy  : Deploy the dist directory to server"
+	@echo "make clean   : Clean all generated files and directories"
+	@echo "make resize  : Resize the data images"
+	@echo
 
 dev:
 	@npm run serve
