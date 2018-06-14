@@ -22,8 +22,10 @@
                 </div>
             </div>
         </nav>
-        <div class="container is-fluid">
-            <router-view></router-view>
+        <div class="section is-small">
+            <div class="container is-fluid">
+                <router-view></router-view>
+            </div>
         </div>
     </div>
 </template>
@@ -35,6 +37,10 @@ body {
 
 #app {
     font-family: 'Titillium Web', sans-serif;
+}
+
+.is-small {
+    padding: 0px 5px;
 }
 </style>
 
