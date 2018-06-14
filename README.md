@@ -12,30 +12,33 @@ Install the dependencies
 
 ### Development
 
-Run the commands
+Run the dev server (http://localhost:8080)
 
     make dev
 
-The development url
+Build dist directory
 
-    http://localhost:8080
+    make build
+
+Resize all related data images
+
+    make resize
+
+Clear all generated files and directories
+
+    make clean
 
 ### Deploy
 
 Edit the deploy file
 
     cp deploy.sftp.js.example deploy.sftp.js
+
     vim deploy.sftp.js
 
 Run the commands
 
     make deploy
-
-### Clean
-
-Clear all build files, deploy and env directories
-
-    make clean
 
 ## Nginx
 
