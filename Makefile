@@ -30,3 +30,6 @@ clean:
 	@rm -rf ./build
 	@rm -rf ./deploy
 	@rm -rf ./venv
+
+format:
+    @npx prettier --write .
