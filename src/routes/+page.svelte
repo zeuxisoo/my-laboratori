@@ -16,7 +16,7 @@ const projects = data.projects;
                 </figure>
                 <div class="card-body p-3">
                     <div class="card-title">{project.caption}</div>
-                    <div class="card-description">
+                    <div class="card-description min-h-20">
                         {project.description}
                     </div>
                     <div class="card-actions justify-end">
