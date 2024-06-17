@@ -1,11 +1,12 @@
 <script>
 import "../app.css";
+import Container from '../components/Container.svelte';
 </script>
 
 <div class="bg-base-100">
     <div class="bg-neutral-100 sticky top-0 z-30 w-full shadow-sm">
         <div class="navbar w-full justify-center">
-            <div class="container md:max-w-[80%]">
+            <Container>
                 <div class="flex-1">
                     <a class="btn btn-ghost text-xl text-primary" href="/">Lab</a>
                 </div>
@@ -15,13 +16,13 @@ import "../app.css";
                         <li><a href="https://project.not.im/">Project</a></li>
                     </ul>
                 </div>
-            </div>
+            </Container>
         </div>
     </div>
 
     <div class="flex justify-center px-6 pt-5 pb-16">
-        <div class="container md:max-w-[80%]">
+        <Container>
             <slot />
-        </div>
+        </Container>
     </div>
 </div>
