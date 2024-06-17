@@ -8,16 +8,16 @@ const projects = data.projects;
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
     {#each projects as project}
         <div class="card glass">
-            <figure class="bg-slate-100">
-                <img src="https://placehold.co/450x285" alt="card" />
+            <figure class="bg-slate-100 min-h-72">
+                <img src={project.thumb} alt={project.caption} />
             </figure>
             <div class="card-body p-3">
-                <div class="card-title">Title</div>
+                <div class="card-title">{project.caption}</div>
                 <div class="card-description">
-                    this is description
+                    {project.description}
                 </div>
                 <div class="card-actions justify-end">
-                    <button class="btn btn-sm">More</button>
+                    <a href="/project/{project.id}" class="btn btn-sm">More</a>
                 </div>
             </div>
         </div>
