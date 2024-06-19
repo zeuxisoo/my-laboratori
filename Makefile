@@ -32,4 +32,4 @@ clean:
 	@rm -rf ./venv
 
 format:
-    @npx prettier --write .
+	@npx prettier --write .
