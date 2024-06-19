@@ -6,30 +6,29 @@ all:
 	@echo "------------ : -----------"
 	@echo "make dev     : Start the development server"
 	@echo "make build   : Build the website into dist directory"
-	@echo "make deploy  : Deploy the dist directory to server"
 	@echo "make clean   : Clean all generated files and directories"
 	@echo "make resize  : Resize the data images"
+	@echo "make deploy  : Deploy the dist directory to server"
+	@echo "make format  : Format the code"
 	@echo
 
 dev:
-	@npm run serve
+	@npm run dev
 
-build:
+build: resize
 	@npm run build
+
+clean:
+	@rm -rf ./dist
+	@rm -rf ./venv3
 
 resize:
 	rm -rf venv3
 	python3 -m venv venv3
 	source venv3/bin/activate && pip install Pillow && python scripts/resize.py
 
-deploy: resize build
-	@npm run deploy
-
-clean:
-	@rm -rf ./dist
-	@rm -rf ./build
-	@rm -rf ./deploy
-	@rm -rf ./venv
+deploy:
+	@node ./scripts/deploy.js
 
 format:
 	@npx prettier --write .
