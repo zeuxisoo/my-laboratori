@@ -18,9 +18,9 @@ build:
 	@npm run build
 
 resize:
-	rm -rf venv
-	virtualenv --no-site-package venv
-	source venv/bin/activate && pip install Pillow && python scripts/resize.py
+	rm -rf venv3
+	python3 -m venv venv3
+	source venv3/bin/activate && pip install Pillow && python scripts/resize.py
 
 deploy: resize build
 	@npm run deploy

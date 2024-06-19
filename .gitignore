@@ -22,3 +22,5 @@ vite.config.ts.timestamp-*
 
 # Custom
 /dist
+/venv3
+.env

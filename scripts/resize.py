@@ -3,9 +3,9 @@ from PIL import Image
 
 dirname = os.path.dirname
 abspath = os.path.abspath
-data_image_root = os.path.join(abspath(dirname(dirname(__file__))), 'public/data/images')
+data_image_root = os.path.join(abspath(dirname(dirname(__file__))), 'static/data/images')
 
-def resize(file_path, width_size, height_size):
+def resize(file_path: str, width_size: str, height_size: str) -> str:
     image = Image.open(file_path)
 
     source_ratio = float(image.size[0]) / float(image.size[1])
@@ -25,25 +25,30 @@ def resize(file_path, width_size, height_size):
         dest_size[0] = int(width_size)
         dest_size[1] = int(width_size / source_ratio)
 
-    image.resize(tuple(dest_size), Image.ANTIALIAS).save(file_path)
+    image.resize(tuple(dest_size), Image.LANCZOS).save(file_path)
 
-    return "{0} -> {1}, {2}".format(file_path, dest_size[0], dest_size[1])
+    return f"{file_path} -> {dest_size[0]}, {dest_size[1]}"
 
-folders = [folder for folder in os.listdir(data_image_root) if folder[0] != '.']
+def main():
+    folders = [folder for folder in os.listdir(data_image_root) if folder[0] != '.']
 
-for folder in folders:
-    for image in os.listdir("{0}/{1}".format(data_image_root, folder)):
-        if image[0] != "." and image[:6] != "thumb_":
-            image_file_path = "{0}/{1}/{2}".format(data_image_root, folder, image)
+    for folder in folders:
+        for image in os.listdir("{0}/{1}".format(data_image_root, folder)):
+            if image[0] != "." and image[:6] != "thumb_":
+                image_file_path = "{0}/{1}/{2}".format(data_image_root, folder, image)
 
-            if image_file_path is not None:
-                if image.split('.')[0] == "image":
-                    width  = 900
-                    height = 600
-                else:
-                    width  = 450
-                    height = 285
+                if image_file_path is not None:
+                    if image.split('.')[0] == "image":
+                        width  = 900
+                        height = 600
+                    else:
+                        width  = 450
+                        height = 285
 
-                print("F: {0}".format(image_file_path))
-                print("T: {0}".format(resize(image_file_path, width, height)))
-                print("")
+                    print(f"F: {image_file_path}")
+                    print(f"T: {resize(image_file_path, width, height)}")
+                    print("")
+
+
+if __name__ == "__main__":
+    main()
