@@ -1,6 +1,6 @@
 <script>
 import "../app.css";
-import Container from '../components/Container.svelte';
+import Container from "../components/Container.svelte";
 </script>
 
 <div class="bg-base-100">
