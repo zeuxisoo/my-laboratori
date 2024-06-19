@@ -25,7 +25,7 @@ clean:
 resize:
 	rm -rf venv3
 	python3 -m venv venv3
-	source venv3/bin/activate && pip install Pillow && python scripts/resize.py
+	source venv3/bin/activate && pip install pillow && python scripts/resize.py
 
 deploy:
 	@node ./scripts/deploy.js
