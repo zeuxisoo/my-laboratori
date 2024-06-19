@@ -1,4 +1,4 @@
-## My-Laboratori
+## Laboratori
 
 A static website to record my side projects
 
@@ -12,11 +12,11 @@ Install the dependencies
 
 ### Development
 
-Run the dev server (http://localhost:8080)
+Run the dev server (http://localhost:5173)
 
     make dev
 
-Build dist directory
+Build dist directory (include resize task)
 
     make build
 
@@ -32,18 +32,9 @@ Clear all generated files and directories
 
 Edit the deploy file
 
-    cp deploy.sftp.js.example deploy.sftp.js
-
-    vim deploy.sftp.js
+    cp .env.example .env
+    vim .env
 
 Run the commands
 
     make deploy
-
-## Nginx
-
-Add the following code to domain configuration
-
-    location / {
-        try_files $uri $uri/ /index.html =404;
-    }
