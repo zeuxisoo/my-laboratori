@@ -5,7 +5,7 @@ dirname = os.path.dirname
 abspath = os.path.abspath
 data_image_root = os.path.join(abspath(dirname(dirname(__file__))), 'static/data/images')
 
-def resize(file_path: str, width_size: str, height_size: str) -> str:
+def resize(file_path: str, width_size: int, height_size: int) -> str:
     image = Image.open(file_path)
 
     source_ratio = float(image.size[0]) / float(image.size[1])
@@ -25,7 +25,7 @@ def resize(file_path: str, width_size: str, height_size: str) -> str:
         dest_size[0] = int(width_size)
         dest_size[1] = int(width_size / source_ratio)
 
-    image.resize(tuple(dest_size), Image.LANCZOS).save(file_path)
+    image.resize((dest_size[0], dest_size[1]), Image.LANCZOS).save(file_path)
 
     return f"{file_path} -> {dest_size[0]}, {dest_size[1]}"
 
