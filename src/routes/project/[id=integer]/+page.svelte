@@ -1,6 +1,11 @@
 <script>
-/** @type {import('./$types').PageData} */
-export let data;
+/**
+ * @typedef {Object} Props
+ * @property {import('./$types').PageData} data
+ */
+
+/** @type {Props} */
+let { data } = $props();
 
 const project = data.project;
 
@@ -34,7 +39,7 @@ const previousPage = () => history.back();
         </div>
     </div>
     <div class="pt-5">
-        <button class="btn w-full" on:click={previousPage}>Back</button>
+        <button class="btn w-full" onclick={previousPage}>Back</button>
     </div>
 {:catch error}
     <div class="alert alert-error grid-cols-none justify-center">

@@ -1,6 +1,14 @@
 <script>
 import "../app.css";
 import Container from "../components/Container.svelte";
+
+/**
+ * @typedef {Object} Props
+ * @property {import('svelte').Snippet} [children]
+ */
+
+/** @type {Props} */
+let { children } = $props();
 </script>
 
 <div class="bg-base-100">
@@ -22,7 +30,7 @@ import Container from "../components/Container.svelte";
 
     <div class="flex justify-center px-6 pt-5 pb-16">
         <Container>
-            <slot />
+            {@render children?.()}
         </Container>
     </div>
 </div>
